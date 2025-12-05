@@ -19,20 +19,20 @@ logs {
         labels = {
           job = "cpsweb-apps"
           __path__ = [
-            "/cpsweb/apps/req/logs/req.log",
-            "/cpsweb/apps/acs/logs/acs.log",
-            "/cpsweb/apps/hcr/logs/hcr.log",
-            "/cpsweb/apps/wt/logs/wt.log",
-            "/cpsweb/apps/uac/logs/uac.log",
-            "/cpsweb/apps/wtac/logs/wtac.log",
-            "/cpsweb/apps/home/logs/home.log",
-            "/cpsweb/apps/amo/logs/amo.log",
+            "/cpsweb/apps/req/logs/req.loq",
+            "/cpsweb/apps/acs/logs/acs.loq",
+            "/cpsweb/apps/hcr/logs/hcr.loq",
+            "/cpsweb/apps/wt/logs/wt.loq",
+            "/cpsweb/apps/uac/logs/uac.loq",
+            "/cpsweb/apps/wtac/logs/wtac.loq",
+            "/cpsweb/apps/home/logs/home.loq",
+            "/cpsweb/apps/amo/logs/amo.loq",
             "/cpsweb/apps/invloanws/logs/invloanws.log",
             "/cpsweb/apps/wi/logs/wi.log",
             "/cpsweb/apps/hcr/loqs/hcr.1oq",
             "/cpsweb/apps/usermgmt/logs/usermgmt.log",
-            "/cpsweb/apps/mmd/logs/mmd.log",
-            "/cpsweb/apps/mmg/logs/mmg.log",
+            "/cpsweb/apps/mmd/logs/mmd.loq",
+            "/cpsweb/apps/mmg/logs/mmg.loq",
           ]
         }
       }
