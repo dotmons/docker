@@ -1,36 +1,50 @@
 server:
-  http_listen_port: 3100
+  http_listen_port: 10225
 
-ingester:
-  lifecycler:
-    ring:
-      kvstore:
-        store: inmemory
-    final_sleep: 0s
-  chunk_idle_period: 3m
-  max_chunk_age: 1h
+common:
+  path_prefix: /home/loki
+  storage:
+    filesystem:
+      chunks_directory: /home/loki/chunks
+      rules_directory: /home/loki/rules
+  replication_factor: 1
+
+query_range:
+  results_cache:
+    cache:
+      enable_fifocache: true
 
 schema_config:
   configs:
-    - from: 2024-01-01
-      store: boltdb-shipper
+    - from: "2024-01-01"
+      store: tsdb
       object_store: filesystem
       schema: v13
       index:
         prefix: index_
         period: 24h
 
+ingester:
+  wal:
+    enabled: true
+    dir: /home/loki/wal
+  chunk_idle_period: 3m
+  max_chunk_age: 1h
+  lifecycler:
+    ring:
+      kvstore:
+        store: inmemory
+
 storage_config:
-  boltdb_shipper:
-    active_index_directory: /var/lib/loki/index
-    shared_store: filesystem
+  tsdb_shipper:
+    active_index_directory: /home/loki/index
+    cache_location: /home/loki/index_cache
   filesystem:
-    directory: /var/lib/loki/chunks
+    directory: /home/loki/chunks
 
 limits_config:
   ingestion_rate_mb: 16
   ingestion_burst_size_mb: 32
 
 compactor:
-  working_directory: /var/lib/loki/compactor
-  shared_store: filesystem
+  working_directory: /home/loki/compactor
