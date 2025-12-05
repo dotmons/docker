@@ -1,19 +1,5 @@
 loki.source.filelog "cpsweb" {
   include = [
-    "/cpsweb/apps/req/logs/req.log",
-    "/cpsweb/apps/acs/logs/acs.log",
-    "/cpsweb/apps/hcr/logs/hcr.log",
-    "/cpsweb/apps/wt/logs/wt.log",
-    "/cpsweb/apps/uac/logs/uac.log",
-    "/cpsweb/apps/wtac/logs/wtac.log",
-    "/cpsweb/apps/home/logs/home.log",
-    "/cpsweb/apps/amo/logs/amo.log",
-    "/cpsweb/apps/invloanws/logs/invloanws.log",
-    "/cpsweb/apps/wi/logs/wi.log",
-    "/cpsweb/apps/hcr/logs/hcr.log",
-    "/cpsweb/apps/usermgmt/logs/usermgmt.log",
-    "/cpsweb/apps/mmd/logs/mmd.log",
-    "/cpsweb/apps/mmg/logs/mmg.log"
   ]
 
   positions {
