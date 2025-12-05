@@ -1,0 +1,16 @@
+logs:
+  configs:
+    - name: cpsweb-apps-logs
+      clients:
+        - url: http://localhost:10225/loki/api/v1/push   # Loki ingestion URL
+      positions:
+        filename: /home/oludoa/grafanaalloy/positions/cpsweb-positions.yaml
+      scrape_configs:
+        - job_name: cpsweb-apps
+          static_configs:
+            - targets: ["localhost"]
+              labels:
+                job: cpsweb-apps
+                # Map each file path to the __path__ label
+                __path__:
+                  - /c
