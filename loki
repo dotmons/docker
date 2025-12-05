@@ -16,7 +16,7 @@ query_range:
 
 schema_config:
   configs:
-    - from: "2024-01-01"
+    - from: 2024-01-01
       store: tsdb
       object_store: filesystem
       schema: v13
@@ -34,13 +34,14 @@ ingester:
     ring:
       kvstore:
         store: inmemory
+      # removed final_sleep (was optional, may cause unmarshal issues)
 
 storage_config:
+  tsdb:
+    dir: /home/loki/chunks
   tsdb_shipper:
     active_index_directory: /home/loki/index
     cache_location: /home/loki/index_cache
-  filesystem:
-    directory: /home/loki/chunks
 
 limits_config:
   ingestion_rate_mb: 16
